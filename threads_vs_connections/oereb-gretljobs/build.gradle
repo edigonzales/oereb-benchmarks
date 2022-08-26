@@ -1,0 +1,15 @@
+task motherOfAllTasks() {
+    group = "__Main-Job__"
+    description = "Aggregationstask für Import sämtlicher Daten"
+    dependsOn ":oereb_av:replaceCadastralSurveyingData", 
+        ":oereb_plzo:importPLZO", 
+        ":oereb_bundesgesetze:importData", 
+        ":oereb_bundeskonfiguration:importBundeskonfiguration",
+        ":oereb_kantonskonfiguration:importKantonskonfiguration", 
+
+        ":oereb_bundesdaten:importData", 
+        ":oereb_nutzungsplanung:importData",
+        ":oereb_nutzungsplanung_kantonal:importData",
+        ":oereb_kbs:importData",
+        ":oereb_grundwasserschutz:importData"
+}
