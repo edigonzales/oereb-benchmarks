@@ -15,8 +15,9 @@ export ORG_GRADLE_PROJECT_dbPwdOerebV2="gretl"
 export ORG_GRADLE_PROJECT_geoservicesUrl="http://localhost/wms"
 ```
 
+TODO: CSV nochmals herstellen, da Solothurn und Grenchen nicht mehr vorhanden.
+
 Run Gretl Jobs:
 ```
 ./start-gretl.sh --docker-image sogis/gretl-local:latest --docker-network oereb-gretljobs_default --job-directory $PWD/oereb_av tasks --all
-
 ```
