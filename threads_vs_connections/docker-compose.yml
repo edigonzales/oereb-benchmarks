@@ -33,9 +33,10 @@ services:
       TMPDIR: /tmp/
       DBSCHEMA: live
       MININTERSECTION: "0.1"
-      TOMCAT_THREADS: 200
-      TOMCAT_QUEUE: "1"
-      TOMCAT_CONNECTIONS: "10"
+      TOMCAT_THREADS_MAX: "30"
+      #TOMCAT_ACCEPT_COUNT: "1"
+      #TOMCAT_MAX_CONNECTIONS: "10"
+      HIKARI_MAX_POOL_SIZE: "10"
       LOG_LEVEL_DB_CONNECTION_POOL: debug
       LOG_LEVEL_OEREB: error
     ports:
