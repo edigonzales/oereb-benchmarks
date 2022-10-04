@@ -6,8 +6,10 @@ docker-compose up --detach
 docker logs -f b12094bc3260
 ```
 
+Ändern der ENV-Variable im yml-File, dann:
+
 ```
-docker-compose restart webservice
+docker-compose up --detach
 ```
 
 ```
