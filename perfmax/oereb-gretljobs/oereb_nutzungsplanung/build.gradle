@@ -29,7 +29,7 @@ oerebThemen.each { oerebThema ->
     task "download_$themaName"(type: Download) {
         group = GROUP
         description = "Download NPL-Daten"
-        src baseUrl + themaName + "_xtf_20220420.zip"
+        src baseUrl + themaName + "_xtf.zip"
         dest pathToTempFolder
         overwrite true
     }
@@ -37,7 +37,7 @@ oerebThemen.each { oerebThema ->
     task "unzipData_$themaName"(type: Copy, dependsOn: "download_$themaName") {
         group = GROUP
         description = "Unzip zip file"
-        from zipTree(Paths.get(pathToTempFolder, themaName+"_xtf_20220420.zip"))
+        from zipTree(Paths.get(pathToTempFolder, themaName+"_xtf.zip"))
         into file(pathToUnzipFolder)
         //include "**/*.xtf"
         /*
