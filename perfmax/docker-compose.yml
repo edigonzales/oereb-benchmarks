@@ -1,0 +1,48 @@
+version: '3'
+services:
+  db:
+    image: ghcr.io/oereb/oereb-db:2
+    environment:
+      POSTGRES_DB: oereb
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_HOST_AUTH_METHOD: md5
+      PG_WRITE_PWD: ddluser
+      PG_READ_PWD: dmluser
+      PG_GRETL_PWD: gretl
+    ports:
+      - "54323:5432"
+    volumes:
+      - v ~/oereb-pgdata:/var/lib/postgresql/data
+  # qgis-server:
+  #   image: ghcr.io/oereb/oereb-wms:2
+  #   environment:
+  #     QGIS_SERVER_PARALLEL_RENDERING: "true"
+  #     QGIS_SERVER_MAX_THREADS: 2
+  #     QGIS_FCGI_MAX_PROCESSES: 2
+  #     QGIS_FCGI_MIN_PROCESSES: 1
+  #     QGIS_SERVER_LOG_LEVEL: 0
+  #   ports:
+  #     - 8083:80
+  #   depends_on:
+  #     - db
+  webservice:
+    image: sogis/oereb-web-service:2
+    environment:
+      TZ: Europe/Zurich
+      DBURL: jdbc:postgresql://db:5432/oereb
+      DBUSR: dmluser
+      DBPWD: dmluser
+      TMPDIR: /tmp/
+      DBSCHEMA: live
+      MININTERSECTION: "0.1"
+      TOMCAT_THREADS_MAX: 4
+      #TOMCAT_ACCEPT_COUNT: 1
+      #TOMCAT_MAX_CONNECTIONS: 2
+      HIKARI_MAX_POOL_SIZE: 10  
+      LOG_LEVEL_DB_CONNECTION_POOL: debug
+      LOG_LEVEL_OEREB: error
+    ports:
+      - 8080:8080
+    depends_on:
+      # - qgis-server
+      - db
