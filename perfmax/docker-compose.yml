@@ -12,7 +12,7 @@ services:
     ports:
       - "54323:5432"
     volumes:
-      - v ~/oereb-pgdata:/var/lib/postgresql/data
+      - ~/oereb-pgdata:/var/lib/postgresql/data
   # qgis-server:
   #   image: ghcr.io/oereb/oereb-wms:2
   #   environment:

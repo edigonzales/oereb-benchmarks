@@ -13,5 +13,6 @@ runcmd:
   - runuser -l oereb -c 'mkdir /home/oereb/apps/'
   - runuser -l oereb -c 'wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.1.1.zip -O /home/oereb/apps/jmeter.zip'
   - runuser -l oereb -c 'unzip /home/oereb/apps/jmeter.zip -d /home/oereb/apps/jmeter'
+  - runuser -l oereb -c 'mkdir --mode=0777 /home/oereb/oereb-pgdata'
 
 
