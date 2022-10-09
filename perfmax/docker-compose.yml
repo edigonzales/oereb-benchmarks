@@ -42,7 +42,7 @@ services:
       LOG_LEVEL_DB_CONNECTION_POOL: debug
       LOG_LEVEL_OEREB: error
     ports:
-      - 8081:8080
+      - 8080:8080
     depends_on:
       # - qgis-server
       - db
