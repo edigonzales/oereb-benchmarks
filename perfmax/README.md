@@ -31,5 +31,9 @@ docker logs -f b12094bc3260
 Ändern der ENV-Variable im yml-File, dann:
 
 ```
-docker-compose up --detach
+docker compose up --detach
+```
+
+```
+/home/oereb/apps/apache-jmeter-5.1.1/bin/jmeter -n -t oereb-web-service.jmx  -l log-n8-c30-th9.jtl -e -o dashboard-n8-c30-th9
 ```
