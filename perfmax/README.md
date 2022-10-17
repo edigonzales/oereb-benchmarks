@@ -44,4 +44,6 @@ docker compose up --detach
 /home/oereb/apps/jmeter/apache-jmeter-5.1.1/bin/jmeter -n -t oereb-web-service.jmx  -l log-n16-c40-th12.jtl -e -o dashboard-n16-c40-th12 
 (kann gemäss meiner Logik gar nicht gross anders sein, da jetzt th=12 limitiernd ist)
 
+/home/oereb/apps/jmeter/apache-jmeter-5.1.1/bin/jmeter -n -t oereb-web-service.jmx  -l log-n16-c50-th16.jtl -e -o dashboard-n16-c50-th16 
+
 ```
