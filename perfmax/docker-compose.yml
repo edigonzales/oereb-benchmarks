@@ -11,8 +11,8 @@ services:
       PG_GRETL_PWD: gretl
     ports:
       - "54323:5432"
-    # volumes:
-    #   - ~/oereb-pgdata:/var/lib/postgresql/data:delegated
+    volumes:
+      - ~/oereb-pgdata:/var/lib/postgresql/data:delegated
   # qgis-server:
   #   image: ghcr.io/oereb/oereb-wms:2
   #   environment:
