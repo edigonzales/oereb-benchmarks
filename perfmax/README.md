@@ -50,3 +50,8 @@ docker compose up --detach
 
 
 ```
+
+
+```
+http://65.109.10.223:8080/extract/xml/?EGRID=CH955832730623
+```
