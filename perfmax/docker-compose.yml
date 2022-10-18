@@ -27,7 +27,7 @@ services:
   #   depends_on:
   #     - db
   webservice:
-    image: sogis/oereb-web-service:2
+    image: sogis/oereb-web-service-graalvm-jdk:2
     environment:
       TZ: Europe/Zurich
       DBURL: jdbc:postgresql://db:5432/oereb
