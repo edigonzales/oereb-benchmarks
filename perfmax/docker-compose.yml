@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: ghcr.io/oereb/oereb-db:2
+    command: postgres -c 'max_connections=200'
     environment:
       POSTGRES_DB: oereb
       POSTGRES_PASSWORD: mysecretpassword
