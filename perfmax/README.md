@@ -63,6 +63,8 @@ docker compose up --detach
 
 /home/oereb/apps/jmeter/apache-jmeter-5.1.1/bin/jmeter -n -t oereb-web-service.jmx  -l log-n64-c150-th40-d48.jtl -e -o dashboard-n64-c150-th40-d48
 
+/home/oereb/apps/jmeter/apache-jmeter-5.1.1/bin/jmeter -n -t oereb-web-service.jmx  -l log-n64-c150-th50-d48.jtl -e -o dashboard-n64-c150-th50-d48
+
 
 ```
 
